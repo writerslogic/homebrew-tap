@@ -1,16 +1,13 @@
 # Homebrew formula for witnessd (Rust implementation)
-# To install from source: brew install --build-from-source writerslogic/tap/witnessd
-# To install HEAD: brew install --HEAD writerslogic/tap/witnessd
+# To install: brew install writerslogic/tap/witnessd
 
 class Witnessd < Formula
-  desc "Cryptographic authorship witnessing - kinetic proof of provenance"
-  homepage "https://github.com/writerslogic/witnessd"
+  desc "Cryptographic authorship witnessing for writers and creators"
+  homepage "https://writerslogic.com"
+  url "https://github.com/writerslogic/witnessd/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "b85a2e214b88e38e24da60974bb121a49dcb0c459b783a5ae506afd904cd58ee"
   license "Apache-2.0"
   head "https://github.com/writerslogic/witnessd.git", branch: "main"
-
-  # Stable release URL will be filled in when first Rust release is tagged
-  # url "https://github.com/writerslogic/witnessd/archive/refs/tags/v1.0.0.tar.gz"
-  # sha256 "..."
 
   depends_on "rust" => :build
 
