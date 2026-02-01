@@ -6,7 +6,7 @@ class Witnessd < Formula
   homepage "https://writerslogic.com"
   url "https://github.com/writerslogic/witnessd/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "b85a2e214b88e38e24da60974bb121a49dcb0c459b783a5ae506afd904cd58ee"
-  license "Apache-2.0"
+  license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/writerslogic/witnessd.git", branch: "main"
 
   depends_on "rust" => :build
