@@ -4,8 +4,8 @@
 class Witnessd < Formula
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
-  url "https://github.com/writerslogic/witnessd/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "7a0e205938e3963269bb547d24143d398b01d298d7503bac7f020c3449af5ef1"
+  url "https://github.com/writerslogic/witnessd/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "22f20c0b96422661279839e07bdde9c73fc8aab24b34cd3dbd3d9ef0c160eccc"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/writerslogic/witnessd.git", branch: "main"
 
