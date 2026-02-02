@@ -33,8 +33,8 @@ class Witnessd < Formula
         2. Create your first checkpoint:
            witnessd commit your-document.md -m "Initial draft"
 
-      For the legacy Go implementation, see:
-        https://github.com/writerslogic/witnessd/tree/legacy-go-v1
+      For more information, see:
+        https://github.com/writerslogic/witnessd
 
       Privacy note: Keystroke tracking counts keystrokes only.
       It does NOT capture which keys are pressed.
