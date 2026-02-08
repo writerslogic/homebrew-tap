@@ -60,6 +60,9 @@ witnessd export document.md --tier enhanced
 
 # Verify evidence
 witnessd verify evidence-packet.json
+
+# Or verify online without installing:
+# https://writerslogic.com/verify
 ```
 
 ## Updating
