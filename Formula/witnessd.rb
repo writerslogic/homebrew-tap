@@ -5,7 +5,7 @@ class Witnessd < Formula
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
   url "https://github.com/writerslogic/witnessd-cli/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "f724eb1f06b80c6adad9a706a6a36ca3fa6a7f1ca952d687cc87edb172b72e73"
+  sha256 "6cf4ae24b0635a74621def020a42a79fe38cc95c42ce73a67d8c2cbb7623ba70"
   license "Apache-2.0"
   head "https://github.com/writerslogic/witnessd-cli.git", branch: "main"
 
