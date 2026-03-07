@@ -4,16 +4,16 @@
 class Writerslogic < Formula
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
-  version "0.2.0"
+  version "0.2.1"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.0/writerslogic_v0.2.0_aarch64-apple-darwin.tar.gz"
-      sha256 "a348e7153bd58e5034a3632c03d7848a0b8d64506db57d6678a6178a096726d7"
+      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.1/writerslogic_v0.2.1_aarch64-apple-darwin.tar.gz"
+      sha256 "e451924f9330f168e5d7da8c17acdab6252e91c35b4acdd4fcd571b65a20812d"
     else
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.0/writerslogic_v0.2.0_x86_64-apple-darwin.tar.gz"
-      sha256 "d8a7f4a29785d8d477197a7b817b3f96741ad7e536b89c96a4cfe51ff324e59b"
+      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.1/writerslogic_v0.2.1_x86_64-apple-darwin.tar.gz"
+      sha256 "74d0a5254d8e4fad581f0d8d588d1ab299e68ce62a740751f2f6396945591b87"
     end
   end
 
@@ -44,6 +44,6 @@ class Writerslogic < Formula
   end
 
   test do
-    assert_match "writerslogic", shell_output("#{bin}/writerslogic --version")
+    assert_match "wld_cli", shell_output("#{bin}/writerslogic --version")
   end
 end
