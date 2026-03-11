@@ -4,22 +4,22 @@
 class Writerslogic < Formula
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
-  version "0.2.2"
+  version "0.3.6"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.2/writerslogic_v0.2.2_aarch64-apple-darwin.tar.gz"
-      sha256 "2b4b02e451962c1515c66de5437f8781760d645e816ebd56bd93609012f0f8ef"
+      url "https://github.com/writerslogic/witnessd/releases/download/v0.3.6/writerslogic-v0.3.6-aarch64-apple-darwin.tar.gz"
+      sha256 "df97718c639a5aa1abe535a31533fd8a70825f6787d9bc6e853752c5dd4b1c32"
     else
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.2.2/writerslogic_v0.2.2_x86_64-apple-darwin.tar.gz"
-      sha256 "ccd746a91fbab3646c3d0cc20cbba68e74b7da5d1939dc743373f279b445af92"
+      url "https://github.com/writerslogic/witnessd/releases/download/v0.3.6/writerslogic-v0.3.6-x86_64-apple-darwin.tar.gz"
+      sha256 "3194a7f0a0fcf9da08e6f483c70499e955569a2b75f29de0ba80cfe8b19a77f0"
     end
   end
 
   def install
-    bin.install "writerslogic"
     bin.install "wld"
+    bin.install "writerslogic-native-messaging-host" if File.exist?("writerslogic-native-messaging-host")
   end
 
   def caveats
@@ -36,14 +36,11 @@ class Writerslogic < Formula
            wld commit your-document.md -m "Initial draft"
 
       For more information, see:
-        https://github.com/writerslogic/witnessd
-
-      Privacy note: Keystroke tracking counts keystrokes only.
-      It does NOT capture which keys are pressed.
+        https://writerslogic.com
     EOS
   end
 
   test do
-    assert_match "wld_cli", shell_output("#{bin}/writerslogic --version")
+    assert_match "wld_cli", shell_output("#{bin}/wld --version")
   end
 end
