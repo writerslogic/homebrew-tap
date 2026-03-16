@@ -4,16 +4,16 @@
 class Writerslogic < Formula
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
-  version "0.3.6"
+  version "1.0.1"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.3.6/writerslogic-v0.3.6-aarch64-apple-darwin.tar.gz"
-      sha256 "df97718c639a5aa1abe535a31533fd8a70825f6787d9bc6e853752c5dd4b1c32"
+      url "https://github.com/writerslogic/witnessd/releases/download/v1.0.1/writerslogic-v1.0.1-aarch64-apple-darwin.tar.gz"
+      sha256 "e993ea6f85d9b5b54954f92ce34cb063cf329d965d98bac52c0c698dbfcf7bf8"
     else
-      url "https://github.com/writerslogic/witnessd/releases/download/v0.3.6/writerslogic-v0.3.6-x86_64-apple-darwin.tar.gz"
-      sha256 "3194a7f0a0fcf9da08e6f483c70499e955569a2b75f29de0ba80cfe8b19a77f0"
+      url "https://github.com/writerslogic/witnessd/releases/download/v1.0.1/writerslogic-v1.0.1-x86_64-apple-darwin.tar.gz"
+      sha256 "9571087e5099e20edeaab5957168cb3fcab70c4c99a40985467298b9c9fc5a1c"
     end
   end
 
