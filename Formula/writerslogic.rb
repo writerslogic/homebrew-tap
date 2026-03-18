@@ -9,10 +9,10 @@ class Writerslogic < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/witnessd/releases/download/v1.0.1/writerslogic-v1.0.1-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/writerslogic/cpop/releases/download/v1.0.1/writerslogic-v1.0.1-aarch64-apple-darwin.tar.gz"
       sha256 "e993ea6f85d9b5b54954f92ce34cb063cf329d965d98bac52c0c698dbfcf7bf8"
     else
-      url "https://github.com/writerslogic/witnessd/releases/download/v1.0.1/writerslogic-v1.0.1-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/writerslogic/cpop/releases/download/v1.0.1/writerslogic-v1.0.1-x86_64-apple-darwin.tar.gz"
       sha256 "9571087e5099e20edeaab5957168cb3fcab70c4c99a40985467298b9c9fc5a1c"
     end
   end
