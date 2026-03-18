@@ -18,7 +18,7 @@ class Writerslogic < Formula
   end
 
   def install
-    bin.install "wld"
+    bin.install "cpop"
     bin.install "writerslogic-native-messaging-host" if File.exist?("writerslogic-native-messaging-host")
   end
 
@@ -27,13 +27,13 @@ class Writerslogic < Formula
       To get started:
 
         1. Initialize WritersLogic:
-           wld init
+           cpop init
 
         2. Calibrate VDF for your machine:
-           wld calibrate
+           cpop calibrate
 
         3. Create your first checkpoint:
-           wld commit your-document.md -m "Initial draft"
+           cpop commit your-document.md -m "Initial draft"
 
       For more information, see:
         https://writerslogic.com
@@ -41,6 +41,6 @@ class Writerslogic < Formula
   end
 
   test do
-    assert_match "wld_cli", shell_output("#{bin}/wld --version")
+    assert_match "cpop", shell_output("#{bin}/cpop --version")
   end
 end
