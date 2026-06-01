@@ -8,6 +8,7 @@ cask "writersproof" do
   homepage "https://writerslogic.com"
 
   depends_on macos: ">= :sonoma"
+  depends_on formula: "writerslogic/tap/writersproof-cli"
 
   app "WritersProof.app"
 
