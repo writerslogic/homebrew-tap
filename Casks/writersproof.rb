@@ -15,7 +15,14 @@ cask "writersproof" do
   zap trash: [
     "~/Library/Application Support/WritersProof",
     "~/Library/Application Support/CPOP",
+    "~/.writersproof",
     "~/Library/Caches/com.writerslogic.witnessd",
+    "~/Library/HTTPStorages/com.writerslogic.witnessd",
     "~/Library/Preferences/com.writerslogic.witnessd.plist",
+    "~/Library/Saved Application State/com.writerslogic.witnessd.savedState",
+  ],
+  rmdir: [
+    "~/Library/Application Support/WritersProof",
+    "~/Library/Application Support/CPOP",
   ]
 end
