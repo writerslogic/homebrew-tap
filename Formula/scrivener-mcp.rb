@@ -1,7 +1,7 @@
 class ScrivenerMcp < Formula
   desc "MCP server connecting Scrivener to Claude and other AI assistants"
   homepage "https://github.com/writerslogic/scrivener-mcp"
-  url "https://registry.npmjs.org/scrivener-mcp/-/scrivener-mcp-0.5.1.tgz"
+  url "https://registry.npmjs.org/scrivener-mcp/-/scrivener-mcp-0.5.2.tgz"
   license "AGPL-3.0-only"
 
   depends_on "node@22"
