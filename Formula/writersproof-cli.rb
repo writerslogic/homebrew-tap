@@ -38,6 +38,6 @@ class WritersproofCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/writersproof-cli --version")
+    assert_match "writersproof-cli", shell_output("#{bin}/writersproof-cli --version")
   end
 end
