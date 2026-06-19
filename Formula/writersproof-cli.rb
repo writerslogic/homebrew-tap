@@ -1,22 +1,17 @@
 class WritersproofCli < Formula
   desc "Cryptographic authorship witnessing CLI for writers and creators"
   homepage "https://writerslogic.com"
-  version "1.0.5"
+  version "1.2.2"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.0.5/writersproof-cli-v1.0.5-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER"
+      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.2.2/writersproof-cli-v1.2.2-aarch64-apple-darwin.tar.gz"
+      sha256 "c8867b31e107bfd8e72150b5b29ba89b91ba24f98d73d4b1d5c45170fd29f958"
     else
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.0.5/writersproof-cli-v1.0.5-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER"
+      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.2.2/writersproof-cli-v1.2.2-x86_64-apple-darwin.tar.gz"
+      sha256 "102fa9756ff8286e971b826d6f0db0feb1695195910f6119fd8728458f4c032a"
     end
-  end
-
-  on_linux do
-    url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.0.5/writersproof-cli-v1.0.5-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "PLACEHOLDER"
   end
 
   def install
@@ -43,6 +38,6 @@ class WritersproofCli < Formula
   end
 
   test do
-    assert_match "writersproof-cli", shell_output("#{bin}/writersproof-cli --version")
+    assert_match version.to_s, shell_output("#{bin}/writersproof-cli --version")
   end
 end

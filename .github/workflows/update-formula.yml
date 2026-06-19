@@ -23,19 +23,19 @@ jobs:
         run: |
           sed -i \
             -e "s/version \".*\"/version \"${VERSION}\"/" \
-            -e "s|releases/download/v[^/]*/writerslogic-v[^-]*-aarch64|releases/download/${TAG}/writerslogic-${TAG}-aarch64|" \
-            -e "s|releases/download/v[^/]*/writerslogic-v[^-]*-x86_64|releases/download/${TAG}/writerslogic-${TAG}-x86_64|" \
-            Formula/writerslogic.rb
+            -e "s|releases/download/v[^/]*/writersproof-cli-v[^-]*-aarch64|releases/download/${TAG}/writersproof-cli-${TAG}-aarch64|" \
+            -e "s|releases/download/v[^/]*/writersproof-cli-v[^-]*-x86_64|releases/download/${TAG}/writersproof-cli-${TAG}-x86_64|" \
+            Formula/writersproof-cli.rb
           # Update ARM sha256 (first occurrence)
-          sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writerslogic.rb
+          sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writersproof-cli.rb
           # Update x86 sha256 (second occurrence)
-          awk -v hash="${SHA256_X86}" '/sha256 "[a-f0-9]{64}"/{c++;if(c==2){sub(/sha256 "[a-f0-9]{64}"/,"sha256 \""hash"\"")}}1' Formula/writerslogic.rb > /tmp/formula.rb && mv /tmp/formula.rb Formula/writerslogic.rb
+          awk -v hash="${SHA256_X86}" '/sha256 "[a-f0-9]{64}"/{c++;if(c==2){sub(/sha256 "[a-f0-9]{64}"/,"sha256 \""hash"\"")}}1' Formula/writersproof-cli.rb > /tmp/formula.rb && mv /tmp/formula.rb Formula/writersproof-cli.rb
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Formula/writerslogic.rb
+          git add Formula/writersproof-cli.rb
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: update writerslogic to ${{ github.event.client_payload.version }}"
+          git commit -m "chore: update writersproof-cli to ${{ github.event.client_payload.version }}"
           git push
