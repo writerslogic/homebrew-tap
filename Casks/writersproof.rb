@@ -1,6 +1,6 @@
 cask "writersproof" do
   version "1.5.1"
-  sha256 "6e9701426cdfa867728bafdfe1865b058dc4f466cf63745f4bed22f6b7749e4d"
+  sha256 "3f84d5679c50d12c3be9a680fa177e3ce2e98a39a4faabedf7df8e1ff7e715d4"
 
   url "https://updates.writerslogic.com/WritersProof-#{version}.dmg"
   name "WritersProof"
@@ -26,5 +26,6 @@ cask "writersproof" do
     "~/Library/Application Support/CPOP",
   ]
 end
+
 
 
