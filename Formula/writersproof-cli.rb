@@ -1,16 +1,16 @@
 class WritersproofCli < Formula
   desc "Cryptographic authorship witnessing CLI for writers and creators"
   homepage "https://writerslogic.com"
-  version "1.5.1"
+  version "1.5.2"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.1/writersproof-cli-v1.5.1-aarch64-apple-darwin.tar.gz"
-      sha256 "4ca1ddd10237d3ba1f3ddb856573a3b6292b1944dbed8def7bf91382afa410fa"
+      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.2/writersproof-cli-v1.5.2-aarch64-apple-darwin.tar.gz"
+      sha256 "11859ce4f82accd04ab6b4b8aadd4db67ce97f61e1036af13dbfcd052ed4581e"
     else
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.1/writersproof-cli-v1.5.1-x86_64-apple-darwin.tar.gz"
-      sha256 "3133a0a6a2692bfd6d5e5da96467b2734d93156555403470eaefe28dc57b3260"
+      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.2/writersproof-cli-v1.5.2-x86_64-apple-darwin.tar.gz"
+      sha256 "185a2aca10d2840a8e2209a9734e4b6ce45bcbd15fab3c17d7e12b72cfdb7e86"
     end
   end
 
