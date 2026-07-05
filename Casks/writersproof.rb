@@ -1,8 +1,8 @@
 cask "writersproof" do
-  version "1.5.1"
-  sha256 "54b07424f1095ae210de19e63b3bb7aaee674423e69499cf5d97b7620bcd18e8"
+  version "1.5.2"
+  sha256 "8815a762d6a221cb852d97c79b5b815db791ced9d88af3e0e54d0a79a61f0684"
 
-  url "https://updates.writerslogic.com/WritersProof-#{version}.dmg"
+  url "https://updates.writerslogic.com/macos/WritersProof-#{version}.dmg"
   name "WritersProof"
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
