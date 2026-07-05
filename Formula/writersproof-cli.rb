@@ -6,10 +6,10 @@ class WritersproofCli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.2/writersproof-cli-v1.5.2-aarch64-apple-darwin.tar.gz"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.5.2-aarch64-apple-darwin.tar.gz"
       sha256 "11859ce4f82accd04ab6b4b8aadd4db67ce97f61e1036af13dbfcd052ed4581e"
     else
-      url "https://github.com/writerslogic/writersproof-cli/releases/download/v1.5.2/writersproof-cli-v1.5.2-x86_64-apple-darwin.tar.gz"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.5.2-x86_64-apple-darwin.tar.gz"
       sha256 "185a2aca10d2840a8e2209a9734e4b6ce45bcbd15fab3c17d7e12b72cfdb7e86"
     end
   end

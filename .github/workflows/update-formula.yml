@@ -21,10 +21,11 @@ jobs:
           SHA256_ARM: ${{ github.event.client_payload.sha256_arm }}
           SHA256_X86: ${{ github.event.client_payload.sha256_x86 }}
         run: |
+          R2_BASE="https://updates.writerslogic.com/cli"
           sed -i \
             -e "s/version \".*\"/version \"${VERSION}\"/" \
-            -e "s|releases/download/v[^/]*/writersproof-cli-v[^-]*-aarch64|releases/download/${TAG}/writersproof-cli-${TAG}-aarch64|" \
-            -e "s|releases/download/v[^/]*/writersproof-cli-v[^-]*-x86_64|releases/download/${TAG}/writersproof-cli-${TAG}-x86_64|" \
+            -e "s|url \".*writersproof-cli-v[^-]*-aarch64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-aarch64-apple-darwin.tar.gz\"|" \
+            -e "s|url \".*writersproof-cli-v[^-]*-x86_64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-x86_64-apple-darwin.tar.gz\"|" \
             Formula/writersproof-cli.rb
           # Update ARM sha256 (first occurrence)
           sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writersproof-cli.rb
