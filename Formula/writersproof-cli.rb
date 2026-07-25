@@ -2,7 +2,7 @@ class WritersproofCli < Formula
   desc "Cryptographic authorship witnessing CLI for writers and creators"
   homepage "https://writerslogic.com"
   version "1.5.2"
-  license "AGPL-3.0-only"
+  license "PolyForm-Noncommercial-1.0.0"
 
   on_macos do
     if Hardware::CPU.arm?
