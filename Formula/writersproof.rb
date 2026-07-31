@@ -1,16 +1,16 @@
 class Writersproof < Formula
   desc "Cryptographic authorship witnessing CLI for writers and creators"
   homepage "https://writerslogic.com"
-  version "1.5.2"
+  version "0.1.3"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.5.2-aarch64-apple-darwin.tar.gz"
-      sha256 "11859ce4f82accd04ab6b4b8aadd4db67ce97f61e1036af13dbfcd052ed4581e"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v0.1.3-aarch64-apple-darwin.tar.gz"
+      sha256 "7e2ffd8430a51cdf80c75b1c450a9818f70ff44262c3aa9fbe5c28f7652419e4"
     else
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.5.2-x86_64-apple-darwin.tar.gz"
-      sha256 "185a2aca10d2840a8e2209a9734e4b6ce45bcbd15fab3c17d7e12b72cfdb7e86"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v0.1.3-x86_64-apple-darwin.tar.gz"
+      sha256 "f0dafe230d6ef43b9b903a763082e8c65193ee03d4cd831c2be57e694377c19e"
     end
   end
 
@@ -21,6 +21,13 @@ class Writersproof < Formula
 
   def caveats
     <<~EOS
+      The CLI version line now tracks the WritersProof app (0.1.3). Earlier
+      formulae used a separate 1.5.x line, and Homebrew has no epoch, so
+      `brew upgrade` will not move an existing 1.5.x install down to 0.1.3.
+      If you are on 1.5.x, reinstall once to pick this up:
+
+        brew uninstall writersproof && brew install writerslogic/tap/writersproof-cli
+
       To get started:
 
         1. Initialize WritersProof:
