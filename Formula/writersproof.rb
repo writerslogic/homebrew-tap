@@ -26,7 +26,7 @@ class Writersproof < Formula
       `brew upgrade` will not move an existing 1.5.x install down to 0.1.3.
       If you are on 1.5.x, reinstall once to pick this up:
 
-        brew uninstall writersproof && brew install writerslogic/tap/writersproof-cli
+        brew uninstall writersproof && brew install writerslogic/tap/writersproof
 
       To get started:
 
