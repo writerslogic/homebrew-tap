@@ -26,17 +26,17 @@ jobs:
             -e "s/version \".*\"/version \"${VERSION}\"/" \
             -e "s|url \".*writersproof-cli-v[^-]*-aarch64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-aarch64-apple-darwin.tar.gz\"|" \
             -e "s|url \".*writersproof-cli-v[^-]*-x86_64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-x86_64-apple-darwin.tar.gz\"|" \
-            Formula/writersproof-cli.rb
+            Formula/writersproof.rb
           # Update ARM sha256 (first occurrence)
-          sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writersproof-cli.rb
+          sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writersproof.rb
           # Update x86 sha256 (second occurrence)
-          awk -v hash="${SHA256_X86}" '/sha256 "[a-f0-9]{64}"/{c++;if(c==2){sub(/sha256 "[a-f0-9]{64}"/,"sha256 \""hash"\"")}}1' Formula/writersproof-cli.rb > /tmp/formula.rb && mv /tmp/formula.rb Formula/writersproof-cli.rb
+          awk -v hash="${SHA256_X86}" '/sha256 "[a-f0-9]{64}"/{c++;if(c==2){sub(/sha256 "[a-f0-9]{64}"/,"sha256 \""hash"\"")}}1' Formula/writersproof.rb > /tmp/formula.rb && mv /tmp/formula.rb Formula/writersproof.rb
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Formula/writersproof-cli.rb
+          git add Formula/writersproof.rb
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "chore: update writersproof-cli to ${{ github.event.client_payload.version }}"
           git push
