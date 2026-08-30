@@ -1,14 +1,14 @@
 cask "writersproof" do
-  version "1.5.2"
-  sha256 "8815a762d6a221cb852d97c79b5b815db791ced9d88af3e0e54d0a79a61f0684"
+  version "0.1.12"
+  sha256 "9b0d9243a8c91e7f6c7ac3eaadf297afc42fcd1c1ab342114eec7be7764e6fc0"
 
-  url "https://updates.writerslogic.com/macos/WritersProof-#{version}.dmg"
+  url "https://updates.writerslogic.com/WritersProof-#{version}.dmg"
   name "WritersProof"
   desc "Cryptographic authorship witnessing for writers and creators"
   homepage "https://writerslogic.com"
 
-  depends_on macos: ">= :sonoma"
-  depends_on formula: "writerslogic/tap/writersproof-cli"
+  depends_on macos: :sonoma
+  depends_on formula: "writerslogic/tap/writersproof"
 
   app "WritersProof.app"
 

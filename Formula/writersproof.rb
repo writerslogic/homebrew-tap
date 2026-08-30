@@ -21,9 +21,9 @@ class Writersproof < Formula
 
   def caveats
     <<~EOS
-      The CLI version line now tracks the WritersProof app (0.1.3). Earlier
+      The CLI version line now tracks the WritersProof app (0.1.x). Earlier
       formulae used a separate 1.5.x line, and Homebrew has no epoch, so
-      `brew upgrade` will not move an existing 1.5.x install down to 0.1.3.
+      `brew upgrade` will not move an existing 1.5.x install down to 0.1.x.
       If you are on 1.5.x, reinstall once to pick this up:
 
         brew uninstall writersproof && brew install writerslogic/tap/writersproof
