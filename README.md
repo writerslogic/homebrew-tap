@@ -1,29 +1,14 @@
-<p align="center">
-  <strong>Homebrew Tap for WritersProof</strong><br>
-  <em>Cryptographic authorship witnessing for writers and creators</em>
-</p>
+<!-- repo-header:start -->
+<img src="https://github.com/writerslogic.png?size=160" alt="Add the tap logo" width="120" align="left">
 
-<p align="center">
-  <a href="https://github.com/writerslogic/homebrew-tap/actions/workflows/update-formula.yml"><img src="https://github.com/writerslogic/homebrew-tap/actions/workflows/update-formula.yml/badge.svg" alt="Update Formula"></a>
-  <a href="https://writersproof.com"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue" alt="License"></a>
-</p>
+<h1>Add the tap</h1>
 
----
+<p><strong>Homebrew formulae for CPoE CLI</strong></p>
 
-## What is WritersProof?
+<br clear="left">
 
-**WritersProof** creates tamper-evident cryptographic records of document authorship. It provides irrefutable proof that you wrote what you wrote, when you wrote it.
-
-- **Prove authorship** — Cryptographic evidence chain linking you to your work
-- **Detect AI content** — Forensic analysis identifies non-human writing patterns
-- **Hardware-backed** — Secure Enclave / TPM 2.0 integration for device binding
-- **Verify independently** — Evidence can be verified by anyone, anywhere
-
-## Installation
-
-```bash
-# Add the tap
-brew tap writerslogic/tap
+[![CI](https://img.shields.io/github/actions/workflow/status/writerslogic/homebrew-tap/update-formula.yml?style=flat-square&labelColor=20232a&branch=main&label=CI)](https://github.com/writerslogic/homebrew-tap/actions/workflows/update-formula.yml) [![Best Practices Evidence](https://img.shields.io/badge/best%20practices-evidence%20reviewed-6a4c93?style=flat-square&labelColor=20232a)](.bestpractices.json) [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Sponsor-EA4AAA?style=flat-square&labelColor=20232a)](https://github.com/sponsors/dcondrey)
+<!-- repo-header:end -->
 
 # Install the WritersProof CLI
 brew install writersproof
