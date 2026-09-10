@@ -14,6 +14,21 @@ class Writersproof < Formula
     end
   end
 
+  # The engine and CLI both build for Linux (see release.yml / linux-packages.yml);
+  # Homebrew requires a URL for every OS it audits a tap against regardless of which
+  # OS actually runs `brew install`, so omitting this branch does not just skip
+  # Linuxbrew support, it fails `brew tap` outright on macOS too ("invalid syntax in
+  # tap!"), for every user, on every platform. R2 already serves these tarballs.
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a5eac3d2ad9d54556d3c7d5cb100ab109866623ea5d2d4626b38420334f5cce4"
+    else
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3a616425097a480f36d3105d06aea58c3a125da9644ea417c1d138882e28a395"
+    end
+  end
+
   def install
     bin.install "writersproof-cli"
     bin.install "writerslogic-native-messaging-host" if File.exist?("writerslogic-native-messaging-host")
