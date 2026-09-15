@@ -20,23 +20,47 @@ jobs:
           VERSION: ${{ github.event.client_payload.version }}
           SHA256_ARM: ${{ github.event.client_payload.sha256_arm }}
           SHA256_X86: ${{ github.event.client_payload.sha256_x86 }}
+          SHA256_LINUX_ARM: ${{ github.event.client_payload.sha256_linux_arm }}
+          SHA256_LINUX_X86: ${{ github.event.client_payload.sha256_linux_x86 }}
         run: |
-          R2_BASE="https://updates.writerslogic.com/cli"
-          sed -i \
-            -e "s/version \".*\"/version \"${VERSION}\"/" \
-            -e "s|url \".*writersproof-cli-v[^-]*-aarch64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-aarch64-apple-darwin.tar.gz\"|" \
-            -e "s|url \".*writersproof-cli-v[^-]*-x86_64-apple-darwin\.tar\.gz\"|url \"${R2_BASE}/writersproof-cli-${TAG}-x86_64-apple-darwin.tar.gz\"|" \
-            Formula/writersproof.rb
-          # Update ARM sha256 (first occurrence)
-          sed -i "0,/sha256 \"[a-f0-9]\{64\}\"/s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA256_ARM}\"/" Formula/writersproof.rb
-          # Update x86 sha256 (second occurrence)
-          awk -v hash="${SHA256_X86}" '/sha256 "[a-f0-9]{64}"/{c++;if(c==2){sub(/sha256 "[a-f0-9]{64}"/,"sha256 \""hash"\"")}}1' Formula/writersproof.rb > /tmp/formula.rb && mv /tmp/formula.rb Formula/writersproof.rb
+          set -euo pipefail
+          ruby <<'RUBY'
+          version = ENV.fetch('VERSION')
+          tag = ENV.fetch('TAG')
+          abort 'Invalid release version/tag' unless version.match?(/\A\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?\z/) && tag == "v#{version}"
+          hashes = {
+            'aarch64-apple-darwin' => ENV.fetch('SHA256_ARM'),
+            'x86_64-apple-darwin' => ENV.fetch('SHA256_X86'),
+            'aarch64-unknown-linux-gnu' => ENV.fetch('SHA256_LINUX_ARM'),
+            'x86_64-unknown-linux-gnu' => ENV.fetch('SHA256_LINUX_X86')
+          }
+          abort 'Every platform requires a valid SHA-256' unless hashes.values.all? { |hash| hash.match?(/\A[a-f0-9]{64}\z/) }
+          path = 'Formula/writersproof.rb'
+          formula = File.read(path)
+          abort 'Expected one formula version' unless formula.scan(/^  version "[^"]+"/).length == 1
+          formula.sub!(/^  version "[^"]+"/, "  version \"#{version}\"")
+          hashes.each do |target, hash|
+            count = 0
+            # Bind hashes to their target URL, independent of platform order.
+            pattern = %r{^([ \t]*)url "https://updates\.writerslogic\.com/cli/writersproof-cli-v[^"/]+-#{Regexp.escape(target)}\.tar\.gz"\n[ \t]*sha256 "[a-f0-9]{64}"}
+            formula.gsub!(pattern) do
+              indent = Regexp.last_match(1)
+              count += 1
+              "#{indent}url \"https://updates.writerslogic.com/cli/writersproof-cli-#{tag}-#{target}.tar.gz\"\n#{indent}sha256 \"#{hash}\""
+            end
+            abort "Expected one URL/hash pair for #{target}" unless count == 1
+          end
+          File.write(path, formula)
+          RUBY
+          ruby -c Formula/writersproof.rb
 
       - name: Commit and push
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Formula/writersproof.rb
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: update writersproof-cli to ${{ github.event.client_payload.version }}"
+          git commit -m "chore: update writersproof-cli to $VERSION"
           git push
