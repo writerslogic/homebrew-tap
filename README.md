@@ -1,14 +1,14 @@
-<!-- repo-header:start -->
-<img src="https://github.com/writerslogic.png?size=160" alt="Add the tap logo" width="120" align="left">
+### WritersProof Homebrew Tap
 
-<h1>Add the tap</h1>
+Homebrew formulae for the CPoE CLI.
 
-<p><strong>Homebrew formulae for CPoE CLI</strong></p>
+[![CI](https://img.shields.io/github/actions/workflow/status/writerslogic/homebrew-tap/update-formula.yml?branch=main&label=CI)](https://github.com/writerslogic/homebrew-tap/actions/workflows/update-formula.yml)
 
-<br clear="left">
+## Installation
 
-[![CI](https://img.shields.io/github/actions/workflow/status/writerslogic/homebrew-tap/update-formula.yml?style=flat-square&labelColor=20232a&branch=main&label=CI)](https://github.com/writerslogic/homebrew-tap/actions/workflows/update-formula.yml) [![Best Practices Evidence](https://img.shields.io/badge/best%20practices-evidence%20reviewed-6a4c93?style=flat-square&labelColor=20232a)](.bestpractices.json) [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Sponsor-EA4AAA?style=flat-square&labelColor=20232a)](https://github.com/sponsors/dcondrey)
-<!-- repo-header:end -->
+```bash
+# Add the tap
+brew tap writerslogic/tap
 
 # Install the WritersProof CLI
 brew install writersproof
