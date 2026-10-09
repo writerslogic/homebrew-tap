@@ -1,6 +1,6 @@
 cask "writersproof" do
-  version "1.0.21"
-  sha256 "accdb612dfc2123e41c4d5aac08a9f2e74d5b0502c0d33bc22374fa47ca1f05e"
+  version "1.0.22"
+  sha256 "633b8fe769c34b6dda49cdb81a0e5af6d39c51bf6aa771f0f722c1098fcae2b5"
 
   url "https://updates.writerslogic.com/WritersProof-#{version}.dmg"
   name "WritersProof"
