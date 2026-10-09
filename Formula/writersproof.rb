@@ -1,16 +1,16 @@
 class Writersproof < Formula
   desc "Cryptographic authorship witnessing CLI for writers and creators"
   homepage "https://writerslogic.com"
-  version "1.0.21"
+  version "1.0.22"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.21-aarch64-apple-darwin.tar.gz"
-      sha256 "133711074300463d5a78085b42d461059e5777a3c5c9277905d738e79db53e65"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.22-aarch64-apple-darwin.tar.gz"
+      sha256 "9fed2892282ccd779b80fecf9b72afa87d2741208329f6c5eda08ef35d69ec93"
     else
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.21-x86_64-apple-darwin.tar.gz"
-      sha256 "c26afcf6dae753cb7121b16302c8bc5d6f4e5080929c8bd012a8743f12f3df57"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.22-x86_64-apple-darwin.tar.gz"
+      sha256 "11ea337a53c0aee03fd1b1754b817ecf9a46685ed4a01d4e01b11d81da1b7844"
     end
   end
 
@@ -21,11 +21,11 @@ class Writersproof < Formula
   # tap!"), for every user, on every platform. R2 already serves these tarballs.
   on_linux do
     if Hardware::CPU.arm?
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.21-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "332b8647e45a67ed08a6b3e9b6964df00b3767ec722473122238e6d7ea851ce7"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.22-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "8db6efc276ded22ca5d53ed30d55b410a6fdab932e27fe6fbeff6c034619c665"
     else
-      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.21-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4a08c10c33c7916cf55487f26b8ec0aa2dca6c508e26a6fd28feea946be302ca"
+      url "https://updates.writerslogic.com/cli/writersproof-cli-v1.0.22-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "21a1a843c13dcfc86b12c273e6bb90c8bc046b94e4040019df9fb0ef0127eee0"
     end
   end
 
