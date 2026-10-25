@@ -1,25 +1,25 @@
 class BluepencilLsp < Formula
   desc "Language server for bluepencil: echoes, passive voice, clichés, and more as editor diagnostics"
   homepage "https://github.com/writerslogic/bluepencil"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-lsp-aarch64-apple-darwin.tar.xz"
-      sha256 "70cd69d6b494d54ffb145780f393c8bb3224f5d1560652dd82325ef326e583d0"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-lsp-aarch64-apple-darwin.tar.xz"
+      sha256 "72318a18b13b81b742a291d2fc6e5a18fc55a745b2fa5cbb7bc23aeba50dbf1d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-lsp-x86_64-apple-darwin.tar.xz"
-      sha256 "d2b670caa26dc04ec035d65d2695197be47b5a4f2d6c9041420b7e5375f2553a"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-lsp-x86_64-apple-darwin.tar.xz"
+      sha256 "caac8bfa1de0813ec0877d392a462c2a8c1ecfd59dcce73b1bdebb9a2e37ae39"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-lsp-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8f74b6cb0eae42afbbe5ab657edd4621cddf7bd104ac805fcd82db1540203c1b"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-lsp-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "400284c1fe86c31f04bd32ff834471660ca38974fd6b84db6b1f23cc52f6fbe2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-lsp-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "bafde97f64d06a256e947e8b5dbe2c527e1daa5fef412dc30d644cbafe903947"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-lsp-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "75f35a72a92ccd9e807ea3c028b118ef90d544264ce12c19c79179919bbfc0f2"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
