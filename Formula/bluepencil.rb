@@ -1,25 +1,25 @@
 class Bluepencil < Formula
   desc "Prose analysis for writers: echoes, repeats, rhythm, dialogue, readability, and more"
   homepage "https://github.com/writerslogic/bluepencil"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-aarch64-apple-darwin.tar.xz"
-      sha256 "1d5d7f2b54ebb95b1ad554c10253f3916bbf4eaac6e0c1974ddda99fc53f27dd"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-aarch64-apple-darwin.tar.xz"
+      sha256 "e34b716973753fd667e6f2a1b70dbb6e4fa2fb856a5ade7f26e84a4dff712455"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-x86_64-apple-darwin.tar.xz"
-      sha256 "631c87cb5d34c78aff14f03d75e8a8416516f9008c736e428905c81b5ff780c0"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-x86_64-apple-darwin.tar.xz"
+      sha256 "a5a928d6544e0d022da7c7d012c1886fce88ab9028b6d2a13699ca8ddd157f62"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1acad65642316ffda2a39a6d80ffd6c9c7caba635f9022092a7b52e31bb3cc64"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "12e54ec0cf9f4f3d5174add5e3618621f008a13b5fb2f39dbe4801839516db91"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/writerslogic/bluepencil/releases/download/v0.1.0/bluepencil-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "45b3fd77a1b3c9e88412f119e7ebcdab7400690427fad9bdee79dfd8d84bbd76"
+      url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7edee34e8efdb632d335335582cf91dd47810875a855fbb03f6a50d6e975865f"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
