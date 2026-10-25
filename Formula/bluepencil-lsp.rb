@@ -1,7 +1,6 @@
 class BluepencilLsp < Formula
   desc "Language server for bluepencil prose analysis"
   homepage "https://writerslogic.github.io/bluepencil/"
-  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/writerslogic/bluepencil/releases/download/v0.2.0/bluepencil-lsp-aarch64-apple-darwin.tar.xz"
